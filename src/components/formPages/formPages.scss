@@ -1,0 +1,9 @@
+
+.screensContainer{
+    display: flex;
+
+    height: 500px;
+    &--buttons{
+        align-self: flex-end;
+    }
+}

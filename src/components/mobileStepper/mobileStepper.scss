@@ -1,0 +1,29 @@
+.mobileStepperContainer{
+   background-image: url('../../assets/bg-sidebar-mobile.svg');
+    width: 375px;
+    height: 172px;
+    position: relative;
+    z-index: 1;
+}
+.mobileSteps{
+    position: absolute;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    height: 33px;
+    gap: 16px;
+    left: 98px;
+    top: 32px;
+    &--item{
+        display: flex;
+        border-radius: 50px;
+        width: 33px;
+        height: 33px;
+        border: 2px solid white;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 700;
+        color: white;
+    }
+}

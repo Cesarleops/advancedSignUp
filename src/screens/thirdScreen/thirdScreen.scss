@@ -1,0 +1,6 @@
+@import '../../variables.scss';
+.thirdScreenContainer{
+    @include screen;
+    width: 343px;
+    height: 383px;
+}

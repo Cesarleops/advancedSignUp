@@ -2,6 +2,7 @@ import { createContext, useReducer } from "react";
 import paginationReducer from "./paginationReducer";
 
 export interface PaginationState {
+  suscriptionType: string;
   currentIndex: number;
   steps: {
     step: number;
@@ -33,6 +34,7 @@ export const pagesInitialState: PaginationState = {
       text: "SUMMARY",
     },
   ],
+  suscriptionType: "monthly",
 };
 
 export interface PaginationContextProps {
@@ -49,6 +51,7 @@ export const PaginationProvider = ({ children }: any) => {
     pagesInitialState
   );
   const nextPage = () => {
+    if (pagesState.currentIndex >= pagesState.steps.length - 1) return;
     dispatch({
       type: "NEXT",
     });

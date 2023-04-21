@@ -1,0 +1,11 @@
+
+@mixin screen {
+        background-color: white;
+        z-index: 2;
+        position: absolute;
+        top: 99px;
+        left: 16px;
+        border-radius: 10px;
+        box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+        padding: 24px;
+}

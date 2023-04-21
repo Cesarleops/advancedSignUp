@@ -1,0 +1,7 @@
+@import '../../variables.scss';
+
+.fourthScreenContainer{
+    @include screen;
+    width: 343px;
+    height: 365px;
+}

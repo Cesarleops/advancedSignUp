@@ -1,6 +1,6 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
-import "./App.css";
+import "./App.scss";
 import Stepper from "./components/stepper";
 import FormPages from "./components/formPages";
 import { PaginationProvider } from "./context/PaginationContext";
@@ -9,8 +9,10 @@ const App = () => {
   return (
     <>
       <PaginationProvider>
-        <Stepper />
-        <FormPages />
+        <div className="mainContainer">
+          <Stepper />
+          <FormPages />
+        </div>
       </PaginationProvider>
     </>
   );
