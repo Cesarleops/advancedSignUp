@@ -25,5 +25,10 @@
         font-size: 14px;
         font-weight: 700;
         color: white;
+        &.active{
+            color: #022959;
+            background: #BEE2FD;
+            border: none;
+        }
     }
 }

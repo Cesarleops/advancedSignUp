@@ -2,8 +2,9 @@ import { createContext, useReducer } from "react";
 import paginationReducer from "./paginationReducer";
 
 export interface PaginationState {
-  suscriptionType: string;
+  isMonthly: Boolean;
   currentIndex: number;
+
   steps: {
     step: number;
     subtitle: string;
@@ -12,6 +13,7 @@ export interface PaginationState {
 }
 export const pagesInitialState: PaginationState = {
   currentIndex: 0,
+
   steps: [
     {
       step: 1,
@@ -34,13 +36,14 @@ export const pagesInitialState: PaginationState = {
       text: "SUMMARY",
     },
   ],
-  suscriptionType: "monthly",
+  isMonthly: true,
 };
 
 export interface PaginationContextProps {
   pagesState: PaginationState;
   nextPage: () => void;
   prevPage: () => void;
+  toggle: () => void;
 }
 
 export const PaginationContext = createContext({} as PaginationContextProps);
@@ -63,8 +66,16 @@ export const PaginationProvider = ({ children }: any) => {
     });
   };
 
+  const toggle = () => {
+    dispatch({
+      type: "CHANGESUB",
+    });
+  };
+
   return (
-    <PaginationContext.Provider value={{ pagesState, nextPage, prevPage }}>
+    <PaginationContext.Provider
+      value={{ pagesState, nextPage, prevPage, toggle }}
+    >
       {children}
     </PaginationContext.Provider>
   );

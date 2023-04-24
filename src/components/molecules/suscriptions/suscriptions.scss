@@ -10,6 +10,24 @@
     padding: 14px;
     border: 1px solid #D6D9E6;
     border-radius: 8px;
+    &--title{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 18px;
+        color: #022959;
+    }
+    &--price{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #9699AA;
+    }
+    &--duration{
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        color: #022959
+    }
     &.active{
         border: 1px solid #483EFF;;
     }

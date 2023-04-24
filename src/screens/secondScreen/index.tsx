@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import ScreensHeader from "../../components/molecules/screensHeader";
 import Suscriptions from "../../components/molecules/suscriptions";
 import "./secondScreen.scss";
 import ToggleSwitch from "../../components/molecules/toggleSwitch";
+import { PaginationContext } from "../../context/PaginationContext";
 
 const SecondScreen = () => {
   const [selected, setSelected] = useState({
@@ -10,6 +11,7 @@ const SecondScreen = () => {
     advanced: false,
     pro: false,
   });
+  const { pagesState } = useContext(PaginationContext);
 
   return (
     <div className="secondScreenContainer">
@@ -42,9 +44,21 @@ const SecondScreen = () => {
         iconName="pro"
       />
       <div className="secondScreenContainer--toggle">
-        <p>Monthly</p>
+        <p
+          className={`secondScreenContainer--toggle__text ${
+            pagesState.isMonthly ? "active" : ""
+          }`}
+        >
+          Monthly
+        </p>
         <ToggleSwitch />
-        <p>Yearly</p>
+        <p
+          className={`secondScreenContainer--toggle__text ${
+            !pagesState.isMonthly ? "active" : ""
+          }`}
+        >
+          Yearly
+        </p>
       </div>
     </div>
   );

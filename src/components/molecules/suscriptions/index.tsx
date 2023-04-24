@@ -58,9 +58,11 @@ const Suscriptions = ({
         {iconName === "pro" && <img src={ProIcon} alt="adad" />}
       </div>
       <div>
-        <h3>{title}</h3>
-        <p>{price}</p>
-        {pagesState.suscriptionType === "monthly" && <p>{duration}</p>}
+        <h3 className="suscriptionCard--title">{title}</h3>
+        <p className="suscriptionCard--price">{price}</p>
+        {!pagesState.isMonthly && (
+          <p className="suscriptionCard--duration">{duration}</p>
+        )}
       </div>
     </div>
   );
