@@ -1,0 +1,39 @@
+
+.checkboxContainer{
+    width: 295px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    padding:  11px 16px;
+    gap: 16px;
+    margin-bottom: 12px;
+    background: #FFFF;
+    border: 1px solid #D6D9E6;
+    border-radius: 8px;
+    &--text{
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        color: #9699AA;
+    }
+    &--title{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: #022959;
+    }
+    &--icon{
+        width: 20px;
+        height: 20px;   
+        border: 1px solid #D6D9E6;
+        border-radius: 4px;
+    }
+    &--price{
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        color: #483EFF;
+        margin-left: auto;
+
+    }
+}

@@ -14,9 +14,19 @@ const FormPages = () => {
       {pagesState.currentIndex === 2 && <ThirdScreen />}
       {pagesState.currentIndex === 3 && <FourthScreen />}
       <div className="screensContainer--buttons">
-        <button onClick={() => nextPage()}>Next</button>
+        <button
+          className="screensContainer--buttons__right"
+          onClick={() => nextPage()}
+        >
+          Next Step
+        </button>
         {pagesState.currentIndex > 0 && (
-          <button onClick={() => prevPage()}>Go back</button>
+          <button
+            className="screensContainer--buttons__left"
+            onClick={() => prevPage()}
+          >
+            Go back
+          </button>
         )}
       </div>
     </div>

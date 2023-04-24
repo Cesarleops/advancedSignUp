@@ -1,0 +1,38 @@
+
+.inputContainer{
+    position: relative;
+    &--input{
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+        &:checked + span {
+            &:before {
+                left: 27px;
+            }
+
+        }
+    }
+    &--slider{
+        display: flex;
+        cursor: pointer;
+        width: 50px;
+        height: 25px;
+        border-radius: 100px;
+        background-color: #022959 ;
+        position: relative;
+        transition: background-color 0.2s;
+        &:before{
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 21px;
+            height: 21px;
+            border-radius: 45px;
+            transition: 0.2s;
+            background: white;
+            box-shadow: 0 3px 4px 0 rgba(0,35,11,0.2);
+        }
+
+    }
+}
