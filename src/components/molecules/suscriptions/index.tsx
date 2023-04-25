@@ -23,7 +23,7 @@ const Suscriptions = ({
   selected,
   setSelected,
 }: Props) => {
-  const { pagesState } = useContext(PaginationContext);
+  const { pagesState, setSuscription } = useContext(PaginationContext);
   const selection = () => {
     if (iconName === "arcade") {
       setSelected({
@@ -31,6 +31,7 @@ const Suscriptions = ({
         pro: false,
         advanced: false,
       });
+      setSuscription({ name: "Arcade", price: price });
     }
     if (iconName === "advanced") {
       setSelected({
@@ -38,6 +39,7 @@ const Suscriptions = ({
         pro: false,
         advanced: true,
       });
+      setSuscription({ name: "Advanced", price: price });
     }
     if (iconName === "pro") {
       setSelected({
@@ -45,12 +47,15 @@ const Suscriptions = ({
         pro: true,
         advanced: false,
       });
+      setSuscription({ name: "Pro", price: price });
     }
   };
   return (
     <div
       onClick={() => selection()}
-      className={`suscriptionCard ${selected ? "active" : ""}`}
+      className={`suscriptionCard ${selected ? "active" : ""} ${
+        pagesState.isMonthly ? "monthly" : ""
+      }`}
     >
       <div>
         {iconName === "arcade" && <img src={ArcadeIcon} alt="adad" />}
@@ -59,7 +64,10 @@ const Suscriptions = ({
       </div>
       <div>
         <h3 className="suscriptionCard--title">{title}</h3>
-        <p className="suscriptionCard--price">{price}</p>
+        <p className="suscriptionCard--price">
+          ${pagesState.isMonthly ? price : price * 10}/
+          {pagesState.isMonthly ? "mo" : "yr"}
+        </p>
         {!pagesState.isMonthly && (
           <p className="suscriptionCard--duration">{duration}</p>
         )}

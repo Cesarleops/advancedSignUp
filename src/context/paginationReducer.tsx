@@ -1,6 +1,12 @@
 import { PaginationState } from "./PaginationContext";
 
-type Action = { type: "NEXT" } | { type: "PREV" } | { type: "CHANGESUB" };
+type Action =
+  | { type: "NEXT" }
+  | { type: "PREV" }
+  | { type: "CHANGESUB" }
+  | { type: "NEWSUB"; payload: any }
+  | { type: "NEWADD"; payload: any }
+  | { type: "REMOVEADD"; payload: any };
 
 const paginationReducer = (
   state: PaginationState,
@@ -21,6 +27,22 @@ const paginationReducer = (
       return {
         ...state,
         isMonthly: !state.isMonthly,
+      };
+    case "NEWSUB":
+      return {
+        ...state,
+        suscription: action.payload,
+      };
+
+    case "NEWADD":
+      return {
+        ...state,
+        addOns: [...state.addOns, action.payload],
+      };
+    case "REMOVEADD":
+      return {
+        ...state,
+        addOns: state.addOns.filter((el) => el.name !== action.payload),
       };
     default:
       return state;

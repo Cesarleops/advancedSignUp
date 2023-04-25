@@ -4,4 +4,52 @@
     @include screen;
     width: 343px;
     height: 365px;
+    &--total{
+        display: flex;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #9699AA;
+        gap: 107px;
+        padding-left: 16px;
+        span{
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: right;
+            color: #483EFF;
+        }
+    }
+    &--prices{
+        width: 295px;
+        height: 148px;
+        background: #F8F9FF;
+        border-radius: 8px;
+        padding: 16px;
+        &__button{
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            text-decoration-line: underline;
+            color: #9699AA;
+            border: none;
+        }
+        &__title{
+            display: flex;
+            gap: 122px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            color: #022959;
+        }
+        &__text{
+            display: flex;
+            gap: 122px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            color: #9699AA;
+
+        }
+    }
 }

@@ -4,7 +4,11 @@ import paginationReducer from "./paginationReducer";
 export interface PaginationState {
   isMonthly: Boolean;
   currentIndex: number;
-
+  addOns: { name?: string; price?: number }[];
+  suscription: {
+    name: string;
+    price: number;
+  };
   steps: {
     step: number;
     subtitle: string;
@@ -13,7 +17,11 @@ export interface PaginationState {
 }
 export const pagesInitialState: PaginationState = {
   currentIndex: 0,
-
+  addOns: [],
+  suscription: {
+    name: "",
+    price: 0,
+  },
   steps: [
     {
       step: 1,
@@ -44,6 +52,9 @@ export interface PaginationContextProps {
   nextPage: () => void;
   prevPage: () => void;
   toggle: () => void;
+  setSuscription: (payload: {}) => void;
+  setAddOns: (payload: {}) => void;
+  removeAdd: (payload: string) => void;
 }
 
 export const PaginationContext = createContext({} as PaginationContextProps);
@@ -71,10 +82,36 @@ export const PaginationProvider = ({ children }: any) => {
       type: "CHANGESUB",
     });
   };
+  const setAddOns = (payload: {}) => {
+    dispatch({
+      type: "NEWADD",
+      payload,
+    });
+  };
+  const removeAdd = (payload: string) => {
+    dispatch({
+      type: "REMOVEADD",
+      payload,
+    });
+  };
+  const setSuscription = (payload: {}) => {
+    dispatch({
+      type: "NEWSUB",
+      payload,
+    });
+  };
 
   return (
     <PaginationContext.Provider
-      value={{ pagesState, nextPage, prevPage, toggle }}
+      value={{
+        pagesState,
+        nextPage,
+        prevPage,
+        toggle,
+        setAddOns,
+        setSuscription,
+        removeAdd,
+      }}
     >
       {children}
     </PaginationContext.Provider>

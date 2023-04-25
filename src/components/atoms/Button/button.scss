@@ -1,0 +1,28 @@
+
+.button{
+    position: absolute;
+    bottom: 16px;
+    &.primary{
+        bottom: 16px;
+        right: 5px;
+        width: 97px;
+        height: 40px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        background: #022959;
+        border-radius: 4px;
+        color: white;
+        border: none;
+    }
+    &.secondary{
+        border: none;
+        bottom: 16px;
+        left: 16px;
+        background: none;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: #9699AA;
+    }
+}

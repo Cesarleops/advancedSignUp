@@ -10,6 +10,9 @@
     background: #FFFF;
     border: 1px solid #D6D9E6;
     border-radius: 8px;
+    &.active{
+        border: 1px solid #483EFF;
+    }
     &--text{
         font-weight: 400;
         font-size: 12px;
@@ -27,6 +30,18 @@
         height: 20px;   
         border: 1px solid #D6D9E6;
         border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &.active{
+            background: #483EFF;
+
+            svg{
+               color: white;
+                font-weight: 700;
+             
+            }
+        }
     }
     &--price{
         font-weight: 400;
