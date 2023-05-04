@@ -1,20 +1,17 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import ScreensHeader from "../../components/molecules/screensHeader";
 import Suscriptions from "../../components/molecules/suscriptions";
 import "./secondScreen.scss";
 import ToggleSwitch from "../../components/molecules/toggleSwitch";
 import { PaginationContext } from "../../context/PaginationContext";
+import { AdviceModal } from "../../components/molecules/adviceModal";
 
 const SecondScreen = () => {
-  const [selected, setSelected] = useState({
-    arcade: false,
-    advanced: false,
-    pro: false,
-  });
   const { pagesState } = useContext(PaginationContext);
 
   return (
     <div>
+      {pagesState.suscription.price === 0 && <AdviceModal />}
       <div className="secondScreenContainer">
         <ScreensHeader
           title="Select your plan"
@@ -22,24 +19,21 @@ const SecondScreen = () => {
         />
         <div className="secondScreenContainer--cards">
           <Suscriptions
-            selected={selected.arcade ? true : false}
-            setSelected={setSelected}
+            selected={pagesState.suscription.name === "Arcade"}
             title="Arcade"
             price={9}
             duration="2 months free"
             iconName="arcade"
           />
           <Suscriptions
-            selected={selected.advanced ? true : false}
-            setSelected={setSelected}
+            selected={pagesState.suscription.name === "Advanced"}
             title="Advanced"
             price={12}
             duration="2 months free"
             iconName="advanced"
           />
           <Suscriptions
-            selected={selected.pro ? true : false}
-            setSelected={setSelected}
+            selected={pagesState.suscription.name === "Pro"}
             title="Pro"
             price={15}
             duration="2 months free"

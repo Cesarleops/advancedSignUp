@@ -2,9 +2,10 @@ import { createContext, useReducer } from "react";
 import paginationReducer from "./paginationReducer";
 
 export interface PaginationState {
+  finished: boolean;
   isMonthly: Boolean;
   currentIndex: number;
-  addOns: { name?: string; price?: number }[];
+  addOns: { name: string; price: number | 0 }[];
   suscription: {
     name: string;
     price: number;
@@ -17,6 +18,7 @@ export interface PaginationState {
 }
 export const pagesInitialState: PaginationState = {
   currentIndex: 0,
+  finished: false,
   addOns: [],
   suscription: {
     name: "",
@@ -52,9 +54,11 @@ export interface PaginationContextProps {
   nextPage: () => void;
   prevPage: () => void;
   toggle: () => void;
+  setIndex: () => void;
   setSuscription: (payload: {}) => void;
   setAddOns: (payload: {}) => void;
   removeAdd: (payload: string) => void;
+  setFinished: () => void
 }
 
 export const PaginationContext = createContext({} as PaginationContextProps);
@@ -100,6 +104,16 @@ export const PaginationProvider = ({ children }: any) => {
       payload,
     });
   };
+  const setIndex = () => {
+    dispatch({
+      type: "INDEX",
+    });
+  };
+  const setFinished = () => {
+    dispatch({
+      type: "FINISHED",
+    });
+  };
 
   return (
     <PaginationContext.Provider
@@ -111,6 +125,8 @@ export const PaginationProvider = ({ children }: any) => {
         setAddOns,
         setSuscription,
         removeAdd,
+        setIndex,
+        setFinished
       }}
     >
       {children}

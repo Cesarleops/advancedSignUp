@@ -5,7 +5,7 @@ import { PaginationContext } from "../../context/PaginationContext";
 const MobileStepper = () => {
   const { pagesState } = useContext(PaginationContext);
   const { currentIndex } = pagesState;
-  console.log(pagesState.currentIndex);
+
   return (
     <div className="mobileStepperContainer">
       <ul className="mobileSteps">

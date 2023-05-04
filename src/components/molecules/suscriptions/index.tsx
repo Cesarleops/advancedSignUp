@@ -9,9 +9,6 @@ interface Props {
   price: number;
   duration: string;
   iconName: string;
-  setSelected: Dispatch<
-    SetStateAction<{ arcade: boolean; advanced: boolean; pro: boolean }>
-  >;
   selected: Boolean;
 }
 
@@ -21,32 +18,16 @@ const Suscriptions = ({
   duration,
   iconName,
   selected,
-  setSelected,
 }: Props) => {
   const { pagesState, setSuscription } = useContext(PaginationContext);
   const selection = () => {
     if (iconName === "arcade") {
-      setSelected({
-        arcade: true,
-        pro: false,
-        advanced: false,
-      });
       setSuscription({ name: "Arcade", price: price });
     }
     if (iconName === "advanced") {
-      setSelected({
-        arcade: false,
-        pro: false,
-        advanced: true,
-      });
       setSuscription({ name: "Advanced", price: price });
     }
     if (iconName === "pro") {
-      setSelected({
-        arcade: false,
-        pro: true,
-        advanced: false,
-      });
       setSuscription({ name: "Pro", price: price });
     }
   };

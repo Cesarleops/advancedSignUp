@@ -1,7 +1,5 @@
 
 .screensContainer{
-
-    width: 500px;
        &--buttons{
             position: relative;
             align-self: flex-end;
@@ -21,6 +19,10 @@
                 border-radius: 4px;
                 color: white;
                 border: none;
+                &.confirm{
+                    background: #483EFF;
+
+                }
             }
             &__left{
                 position: absolute;

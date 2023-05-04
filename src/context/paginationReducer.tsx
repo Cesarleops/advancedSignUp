@@ -6,7 +6,9 @@ type Action =
   | { type: "CHANGESUB" }
   | { type: "NEWSUB"; payload: any }
   | { type: "NEWADD"; payload: any }
-  | { type: "REMOVEADD"; payload: any };
+  | { type: "REMOVEADD"; payload: any }
+  | { type: "INDEX" }
+  | { type: "FINISHED" };
 
 const paginationReducer = (
   state: PaginationState,
@@ -43,6 +45,16 @@ const paginationReducer = (
       return {
         ...state,
         addOns: state.addOns.filter((el) => el.name !== action.payload),
+      };
+    case "INDEX":
+      return {
+        ...state,
+        currentIndex: 1,
+      };
+    case "FINISHED":
+      return {
+        ...state,
+        finished: true,
       };
     default:
       return state;
