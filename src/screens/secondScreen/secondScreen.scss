@@ -63,3 +63,15 @@
         left: 15px;
     }
 }
+
+@media(max-width: 390px){
+    .secondScreenContainer{
+        left: 23px;
+    }
+}
+
+@media(max-width: 360px){
+    .secondScreenContainer{
+        left: 10px;
+    }
+}

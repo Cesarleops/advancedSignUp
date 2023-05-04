@@ -21,3 +21,16 @@
         left: 15px;
     }
 }
+
+@media(max-width: 390px){
+    .thirdScreenContainer{
+        left: 23px;
+    }
+}
+
+@media(max-width: 360px){
+    .thirdScreenContainer{
+        left: 10px;
+    }
+}
+

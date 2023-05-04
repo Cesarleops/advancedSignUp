@@ -121,6 +121,18 @@
 
 @media(max-width: 375px){
     .fourthScreenContainer{
-        left: 15px;
+        left: 10px;
+    }
+}
+
+@media(max-width: 390px){
+    .fourthScreenContainer{
+        left: 23px;
+    }
+}
+
+@media(max-width: 360px){
+    .fourthScreenContainer{
+        left: 10px;
     }
 }

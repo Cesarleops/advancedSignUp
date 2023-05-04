@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import Background from "../../assets/bg-sidebar-mobile.svg";
 import "./mobileStepper.scss";
 import { PaginationContext } from "../../context/PaginationContext";
 
@@ -8,6 +9,7 @@ const MobileStepper = () => {
 
   return (
     <div className="mobileStepperContainer">
+      <img src={Background} alt="sasa" />
       <ul className="mobileSteps">
         <li
           className={`mobileSteps--item ${currentIndex === 0 ? "active" : ""}`}
