@@ -2,7 +2,6 @@
 .buttons{
     position: relative;
     align-self: flex-end;
-    
     height: 72px;
     &--right{
         position: absolute;
@@ -41,7 +40,7 @@
     .buttons{
         position: relative;
         align-self: flex-end;
-        width: 90vw;
+        width: 100vw;
         height: 72px;
    
         &--right{
