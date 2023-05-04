@@ -36,6 +36,6 @@ export const Buttons = () => {
       )}
     </div>
   ) : (
-    ""
+    <div></div>
   );
 };
