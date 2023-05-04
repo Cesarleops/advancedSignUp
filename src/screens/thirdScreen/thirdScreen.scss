@@ -9,3 +9,15 @@
     }
     
 }
+
+@media(max-width: 414px){
+    .thirdScreenContainer{
+        left: 30px;
+    }
+}
+
+@media(max-width: 375px){
+    .thirdScreenContainer{
+        left: 15px;
+    }
+}

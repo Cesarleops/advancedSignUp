@@ -112,3 +112,15 @@
         }
     }
 }
+
+@media(max-width: 414px){
+    .fourthScreenContainer{
+        left: 30px;
+    }
+}
+
+@media(max-width: 375px){
+    .fourthScreenContainer{
+        left: 15px;
+    }
+}

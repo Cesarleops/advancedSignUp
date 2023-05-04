@@ -50,3 +50,16 @@
         }
     }
 }
+
+
+@media(max-width: 414px){
+    .secondScreenContainer{
+        left: 30px;
+    }
+}
+
+@media(max-width: 375px){
+    .secondScreenContainer{
+        left: 15px;
+    }
+}

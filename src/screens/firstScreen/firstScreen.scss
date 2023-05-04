@@ -3,7 +3,7 @@
 .firstScreenContainer{
     width: 450px;
     height: 372px;
-    margin-left: 20px;
+    
     &--form{
         display: flex;
         flex-direction: column;
@@ -30,7 +30,8 @@
         width: 343px;
         height: 376px;
         @include screen;    
-        left: 0px;   
+        left: 30px;
+    
         &--form{
             display: flex;
             flex-direction: column;
@@ -52,5 +53,21 @@
             }
         }
 
+    }
+}
+
+@media(max-width: 414px){
+    .firstScreenContainer{
+        width: 343px;
+        height: 376px;
+        @include screen;  
+        left: 25px;
+        
+    }
+}
+
+@media(max-width: 375px){
+    .firstScreenContainer{
+        left: 15px;
     }
 }
