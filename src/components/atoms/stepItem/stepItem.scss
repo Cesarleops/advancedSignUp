@@ -1,0 +1,36 @@
+
+.stepItem{
+    display: flex;
+    gap: 16px;
+    &--number{
+        width: 33px;
+        height: 33px;
+        border-radius: 50px;
+        border: 1px solid #FFFFFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFFFFF;
+        &.active{
+            color: #022959;
+            background: #BEE2FD;
+            border: none;
+        }
+    }
+    &--info{
+        &__text{
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 1px;
+            color: #FFFFFF;
+        }
+        &__step{
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            color: #ABBCFF;
+
+        }
+    }
+}

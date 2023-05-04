@@ -4,7 +4,7 @@ import Suscriptions from "../../components/molecules/suscriptions";
 import "./secondScreen.scss";
 import ToggleSwitch from "../../components/molecules/toggleSwitch";
 import { PaginationContext } from "../../context/PaginationContext";
-import Button from "../../components/atoms/Button";
+
 const SecondScreen = () => {
   const [selected, setSelected] = useState({
     arcade: false,
@@ -20,30 +20,33 @@ const SecondScreen = () => {
           title="Select your plan"
           text="You have the option of monthly or yearly billing"
         />
-        <Suscriptions
-          selected={selected.arcade ? true : false}
-          setSelected={setSelected}
-          title="Arcade"
-          price={9}
-          duration="2 months free"
-          iconName="arcade"
-        />
-        <Suscriptions
-          selected={selected.advanced ? true : false}
-          setSelected={setSelected}
-          title="Advanced"
-          price={12}
-          duration="2 months free"
-          iconName="advanced"
-        />
-        <Suscriptions
-          selected={selected.pro ? true : false}
-          setSelected={setSelected}
-          title="Pro"
-          price={15}
-          duration="2 months free"
-          iconName="pro"
-        />
+        <div className="secondScreenContainer--cards">
+          <Suscriptions
+            selected={selected.arcade ? true : false}
+            setSelected={setSelected}
+            title="Arcade"
+            price={9}
+            duration="2 months free"
+            iconName="arcade"
+          />
+          <Suscriptions
+            selected={selected.advanced ? true : false}
+            setSelected={setSelected}
+            title="Advanced"
+            price={12}
+            duration="2 months free"
+            iconName="advanced"
+          />
+          <Suscriptions
+            selected={selected.pro ? true : false}
+            setSelected={setSelected}
+            title="Pro"
+            price={15}
+            duration="2 months free"
+            iconName="pro"
+          />
+        </div>
+
         <div className="secondScreenContainer--toggle">
           <p
             className={`secondScreenContainer--toggle__text ${

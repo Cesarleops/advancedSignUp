@@ -1,5 +1,3 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import "./App.scss";
 import Stepper from "./components/stepper";
 import FormPages from "./components/formPages";

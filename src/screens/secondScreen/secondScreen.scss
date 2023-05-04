@@ -1,9 +1,11 @@
 @import '../../variables.scss';
 
 .secondScreenContainer{
-    width: 343px;
-    height: 500px;
-    @include screen;
+ 
+    &--cards{
+        display: flex;
+        gap: 18px;
+    }
     &--toggle{
         display: flex;
         justify-content: center;
@@ -16,6 +18,32 @@
             color: #9699AA; 
             &.active{
                 color: #022959;
+            }
+        }
+    }
+}
+@media(max-width: 600px){
+    .secondScreenContainer{
+        width: 343px;
+        height: 500px;
+        @include screen;
+        &--cards{
+            display: flex;
+            flex-direction: column;
+        }
+        &--toggle{
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            align-items: center;
+            &__text{
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+                color: #9699AA; 
+                &.active{
+                    color: #022959;
+                }
             }
         }
     }

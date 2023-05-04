@@ -1,40 +1,78 @@
 
 .screensContainer{
-    display: flex;
 
-    height: 500px;
-    &--buttons{
-        position: relative;
-        align-self: flex-end;
-        width: 100vw;
-       
-        height: 72px;
-        &__right{
-            position: absolute;
-            top: 16px;
-            bottom: 16px;
-            right: 16px;
-            width: 97px;
-            height: 40px;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 16px;
-            background: #022959;
-            border-radius: 4px;
-            color: white;
-            border: none;
+    width: 500px;
+       &--buttons{
+            position: relative;
+            align-self: flex-end;
+            
+            height: 72px;
+            &__right{
+                position: absolute;
+                top: 16px;
+                bottom: 16px;
+                right: 16px;
+                width: 97px;
+                height: 40px;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+                background: #022959;
+                border-radius: 4px;
+                color: white;
+                border: none;
+            }
+            &__left{
+                position: absolute;
+                border: none;
+                top: 16px;
+                bottom: 16px;
+                left: 16px;
+                background: none;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+                color: #9699AA;
+            }
         }
-        &__left{
-            position: absolute;
-            border: none;
-            top: 16px;
-            bottom: 16px;
-            left: 16px;
-            background: none;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 16px;
-            color: #9699AA;
+}
+@media (max-width: 600px){
+    .screensContainer{
+        display: flex;
+        height: 500px;
+        &--buttons{
+            position: relative;
+            align-self: flex-end;
+            width: 90vw;
+            height: 72px;
+       
+            &__right{
+                position: absolute;
+                top: 16px;
+                bottom: 16px;
+                right: 16px;
+                width: 97px;
+                height: 40px;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+                background: #022959;
+                border-radius: 4px;
+                color: white;
+                border: none;
+            }
+            &__left{
+                position: absolute;
+                border: none;
+                top: 16px;
+                bottom: 16px;
+                left: 16px;
+                background: none;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+                color: #9699AA;
+            }
         }
     }
 }

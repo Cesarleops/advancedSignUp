@@ -1,10 +1,36 @@
 @import '../../variables.scss';
 
+.firstScreenContainer{
+    width: 450px;
+    height: 372px;
+    margin-left: 20px;
+    &--form{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    &--input{
+        display: flex;
+        flex-direction: column;
+        color: #022959;
+        gap: 3px;
+        font-weight: 400;
+        font-size: 12px;
+        input{
+            height: 40px;
+            width: 295px;
+            border: 1px solid #D6D9E6;
+            border-radius: 4px;
+            padding: 16px;
+        }
+    }
+}
 @media( max-width: 600px){
     .firstScreenContainer{
         width: 343px;
         height: 376px;
-        @include screen;       
+        @include screen;    
+        left: 0px;   
         &--form{
             display: flex;
             flex-direction: column;

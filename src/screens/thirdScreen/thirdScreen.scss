@@ -1,6 +1,11 @@
 @import '../../variables.scss';
-.thirdScreenContainer{
-    @include screen;
-    width: 343px;
-    height: 383px;
+
+
+@media(max-width: 600px){
+    .thirdScreenContainer{
+        @include screen;
+        width: 343px;
+        height: 383px;
+    }
+    
 }
